@@ -1,0 +1,7 @@
+.admin-item:hover{
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: large;
+    
+}

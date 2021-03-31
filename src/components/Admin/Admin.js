@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import ManageProduct from '../ManageProduct/ManageProduct';
 import AddProduct from './../AddProduct/AddProduct';
 import EditProduct from './../EditProduct/EditProduct';
+import './Admin.css';
 
 
 const routes = [
@@ -45,18 +46,20 @@ const Admin = () => {
                             padding: "10px",
                             width: "25%",
                             background: "#f0f0f0",
-                            textAlign:'center'
+                            height:'12rem',
+                            fontWeight:'600',
+                            marginTop:'25px'
                         }}
                         >
-                        <ul style={{ listStyleType: "none", padding: 0 }}>
-                            <li>
-                                <Link to="/manageProduct">Manage Product</Link>
+                        <ul style={{ listStyleType: "none", padding: 0 }} >
+                            <li className='mt-4 ml-3 admin-item'>
+                                <Link to="/manageProduct" className='text-decoration-none'>Manage Product</Link>
                             </li>
-                            <li>
-                                <Link to="/addProduct">Add Product</Link>
+                            <li className='mt-2 ml-3 admin-item'>
+                                <Link to="/addProduct" className='text-decoration-none'>Add Product</Link>
                             </li>
-                            <li>
-                                <Link to="/editProduct">Edit Product</Link>
+                            <li className='mt-2 ml-3 admin-item'>
+                                <Link to="/editProduct" className='text-decoration-none'>Edit Product</Link>
                             </li>
                         </ul>
 

@@ -11,6 +11,9 @@ import Order from './components/Order/Order';
 import Admin from './components/Admin/Admin';
 import About from './components/About/About';
 import Login from './components/Login/Login';
+import ManageProduct from './components/ManageProduct/ManageProduct';
+import AddProduct from './components/AddProduct/AddProduct';
+import EditProduct from './components/EditProduct/EditProduct';
 
 function App() {
 
@@ -37,6 +40,17 @@ function App() {
           <Route path="/login">
             <Login/>
           </Route>
+
+          <Route path="/manageProduct">
+            <ManageProduct/>
+          </Route>
+          <Route path="/addProduct">
+            <AddProduct/>
+          </Route>
+          <Route path="/editProduct">
+            <EditProduct/>
+          </Route>
+
 
         </Switch>
     </Router>

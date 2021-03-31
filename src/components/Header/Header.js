@@ -12,13 +12,13 @@ const Header = () => {
     const logoIcon = <FontAwesomeIcon icon={faShoppingBag} />
 
     return (
-        <div className='container'>
+        <div className='mt-3'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Navbar.Brand href="#home"><Link to='/'><h1 className='text-warning'>{logoIcon}</h1></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link > <Link to='/home'><h4 className='text-light'>E-Planet</h4></Link></Nav.Link>
+                        <Nav.Link > <Link to='/home'><h4 className='text-light navbar-brand'>E-Planet</h4></Link></Nav.Link>
                     </Nav>
                     <Nav>
                         <Nav.Link to='/home' className='mr-3'> <Link to='/home' className='nav-link'> Home </Link> </Nav.Link>

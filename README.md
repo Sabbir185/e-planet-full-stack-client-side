@@ -1,3 +1,3 @@
 ## E-Planet
-<h6> Easy electronics shopping place <h6>
+<h4> Easy electronics shopping place <h4>
 <p>....................</p>

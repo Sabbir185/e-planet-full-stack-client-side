@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
     const { register, handleSubmit, watch, errors } = useForm();
-    const [imageURL, setImageURL] = useState(false);
+    const [imageURL, setImageURL] = useState(null);
 
     const onSubmit = data => {
         const productData = {
@@ -15,12 +15,17 @@ const AddProduct = () => {
             orderTime: new Date(),
             imageLink: imageURL
         };
-        const url = ``;
-        fetch()
-        .then(res => res.json())
-        then(data => {
-            console.log(data)
-        })
+        if(imageURL !== null ){
+            const url = `http://localhost:5055/addProduct`;
+            fetch(url,{
+                method:'POST',
+                headers:{'content-type':'application/json'},
+                body:JSON.stringify(productData)
+            })
+            .then(res => {
+                console.log(res)
+            })
+        }
     };
 
     const handleImage = (event) => {
@@ -55,9 +60,8 @@ const AddProduct = () => {
                         <input name="price" ref={register({ required: true })} placeholder=' price' className='form-control mt-2'/>
                         {errors.price && <span className='text-danger'>price is required</span>}
 
-                        {
-                            imageURL != true && <input name="file" type='file' onChange={handleImage} ref={register({ required: true })} placeholder=' price' className='form-control-file mt-2'/>
-                        }
+                        
+                        <input name="file" type='file' onChange={handleImage} ref={register({ required: true })} placeholder=' price' className='form-control-file mt-2'/>
                         {errors.file && <span className='text-danger'>product image is required</span>}
                         
                         <input className='btn btn-warning mt-2 d-block' type="submit" value='Add'/>

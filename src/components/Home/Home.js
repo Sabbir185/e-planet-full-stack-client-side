@@ -21,7 +21,7 @@ const Home = () => {
                 <div className="col"></div>
             </div>
 
-
+            
 
         </div>
     );

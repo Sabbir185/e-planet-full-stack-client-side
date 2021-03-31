@@ -7,6 +7,10 @@ import {
   Link
 } from "react-router-dom";
 import Home from './components/Home/Home';
+import Order from './components/Order/Order';
+import Admin from './components/Admin/Admin';
+import About from './components/About/About';
+import Login from './components/Login/Login';
 
 function App() {
 
@@ -21,14 +25,17 @@ function App() {
           <Route path="/home">
             <Home/>
           </Route>
+          <Route path="/order">
+            <Order/>
+          </Route>
           <Route path="/admin">
-            <Home/>
+            <Admin/>
           </Route>
-          <Route path="/About">
-            <Home/>
+          <Route path="/about">
+            <About/>
           </Route>
-          <Route path="/users">
-            <Home/>
+          <Route path="/login">
+            <Login/>
           </Route>
 
         </Switch>

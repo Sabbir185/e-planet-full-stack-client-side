@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from './../Header/Header';
 
 const Login = () => {
     return (
-        <div>
-            <h1>login</h1>
+        <div className='container'>
+            <Header></Header>
         </div>
     );
 };

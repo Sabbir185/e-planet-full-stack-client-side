@@ -1,0 +1,26 @@
+.product-img{
+    /* padding: 20px; */
+    
+    margin: 20px;
+}
+
+.product-img img{
+    width: 300px;
+    height: 180px;
+    border-radius: 10px;
+}
+
+.product{
+    margin: auto;
+}
+
+.body{
+    height: 170px;
+    object-fit: contain;
+}
+
+.card-container{
+    background-color: rgba(243, 240, 240, 0.986);
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}

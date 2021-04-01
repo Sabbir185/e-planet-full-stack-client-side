@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, FormControl, Button } from 'react-bootstrap';
 import Header from '../Header/Header';
+import ProductCard from './../ProductCard/ProductCard';
+import './Home.css'
 
 const Home = () => {
+    const [products, setProducts] = useState([]);
+    useEffect(()=>{
+        const url = `http://localhost:5000/products`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setProducts(data))
+    },[])
 
-
-
+    
     return (
         <div className='container'>
             <Header></Header>
@@ -21,7 +29,11 @@ const Home = () => {
                 <div className="col"></div>
             </div>
 
-            
+            <div className='card-style'>
+                {
+                    products.map( pd => <ProductCard key={pd._id} product={pd}></ProductCard> )
+                }
+            </div>
 
         </div>
     );

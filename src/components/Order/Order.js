@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from './../Header/Header';
 
 const Order = () => {
     return (
-        <div>
-            <h1>order</h1>
+        <div className='container'>
+            <Header></Header>
         </div>
     );
 };

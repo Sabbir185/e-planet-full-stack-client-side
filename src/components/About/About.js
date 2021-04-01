@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from './../Header/Header';
 
 const About = () => {
     return (
-        <div>
-            <h1>about</h1>
+        <div className='container'>
+            <Header></Header>
         </div>
     );
 };

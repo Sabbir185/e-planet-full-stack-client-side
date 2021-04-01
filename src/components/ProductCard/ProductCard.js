@@ -1,18 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Button, Card } from 'react-bootstrap';
+import './ProductCard.css'
 
-const ProductCard = () => {
-    const [products, setProducts] = useState({});
-    useEffect(()=>{
-        const url = ``;
-        fetch(url)
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    },[])
+
+const ProductCard = (props) => {
+    const {name, brand, orderTime, price, imageLink} = props.product;
+    
 
     return (
-        <div className=''>
-            
-        </div>
+        <div className='product'>
+            <Card style={{ width: '18rem' }} className='card-container'>
+                <div className='product-img'>
+                    <Card.Img variant="top" src={imageLink} className='img-fluid'/>
+                </div>
+                <div className='body'>
+                    <Card.Body>
+                        <Card.Title><h6>{name}</h6></Card.Title>
+                        <Card.Text>
+                            <p><small  className='text-secondary'>Brand : {brand}</small></p>
+                        </Card.Text>
+                        <div className="d-flex justify-content-between align-items-center">
+                           
+                            <h5 className='d-inline-block text-info'>Price : ${price}</h5>
+                        
+                            <button className='btn btn-info btn-sm m-2'>Buy Now</button>
+    
+                        </div>
+                    </Card.Body>
+                </div>
+            </Card>
+        </div>    
     );
 };
 

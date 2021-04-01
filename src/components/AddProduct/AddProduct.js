@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Redirect, useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import AlertDesign from '../AlertDesign/AlertDesign';
 import Header from '../Header/Header';
 
 

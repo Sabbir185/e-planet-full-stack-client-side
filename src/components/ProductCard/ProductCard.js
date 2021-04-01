@@ -1,10 +1,16 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 import './ProductCard.css'
 
 
 const ProductCard = (props) => {
-    const {name, brand, orderTime, price, imageLink} = props.product;
+    const {name, brand, orderTime, price, imageLink, _id} = props.product;
+    const history = useHistory();
+
+    const checkoutHandle = (id) => {
+       history.push(`/checkout/${id}`);
+    }
     
 
     return (
@@ -23,7 +29,7 @@ const ProductCard = (props) => {
                            
                             <h5 className='d-inline-block text-info'>Price : ${price}</h5>
                         
-                            <button className='btn btn-info btn-sm m-2'>Buy Now</button>
+                            <button onClick={()=>checkoutHandle(_id)} className='btn btn-info btn-sm m-2'>Buy Now</button>
     
                         </div>
                     </Card.Body>

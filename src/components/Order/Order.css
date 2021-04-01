@@ -1,0 +1,10 @@
+.user-info{
+    border-right: 2px solid gray;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .order-info{
+        margin-top: 30px;
+    }
+  }

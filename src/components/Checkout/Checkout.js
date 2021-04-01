@@ -55,7 +55,7 @@ const Checkout = () => {
                         <td>1</td>
                         <td> {name ? `${name}`: ''} </td>
                         <td> {name ? `1`: ''} </td>
-                        <td> {price ? `${price}`: ''}</td>
+                        <td> {price ? `$${price}`: ''}</td>
                     </tr>
                 </tbody>
             </Table>

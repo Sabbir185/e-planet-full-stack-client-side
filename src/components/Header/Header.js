@@ -10,10 +10,11 @@ import './Header.css'
 
 
 
-const Header = () => {
+const Header = (props) => {
     const logoIcon = <FontAwesomeIcon icon={faShoppingBag} />
     const loggedInUser = useContext(UserContext);
     const {email, name, photoURL} = loggedInUser[0];
+    const badge = props.idFound;
     
 
     return (
@@ -29,7 +30,7 @@ const Header = () => {
                         <Nav.Link className='mr-3'> <Link to='/home' className='nav-link'> Home </Link> </Nav.Link>
                         <Nav.Link className='mr-3'> <Link to='/order' className='nav-link'> Order </Link> </Nav.Link>
                         <Nav.Link className='mr-3'> <Link to='/admin' className='nav-link'> Admin </Link> </Nav.Link>
-                        <Nav.Link className='mr-3'> <Link to='/checkout' className='nav-link'> Checkout </Link> </Nav.Link>
+                        <Nav.Link className='mr-3'> <Link to='/checkout' className='nav-link'> { badge ?  <span class="badge bg-info text-light fontSize">Checkout <span class="badge bg-warning text-dark">1</span></span> : 'Checkout'} </Link> </Nav.Link>
                         {
                             email ? 
                             <Nav.Link className='mr-3'> <Link to='/home' className='nav-link'> <img className='googlePhoto' src={photoURL} alt=""/> </Link> </Nav.Link>

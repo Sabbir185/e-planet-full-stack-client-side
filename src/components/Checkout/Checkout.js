@@ -14,7 +14,7 @@ const Checkout = () => {
     const {name, price} = product;
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://sabbir185-eplanetshop.herokuapp.com/product/${id}`)
         .then(res => res.json())
         .then(data => setProduct(data))
     },[])
@@ -22,7 +22,7 @@ const Checkout = () => {
     const handleOrderInfo = () => {
         const userInfo = {...loggedInUser, product, orderDate: new Date()}
         // console.log(userInfo)
-        fetch('http://localhost:5000/addOrder',{
+        fetch('https://sabbir185-eplanetshop.herokuapp.com/addOrder',{
             method: "POST",
             headers: {'content-type':'application/json'},
             body: JSON.stringify(userInfo)
@@ -39,7 +39,7 @@ const Checkout = () => {
 
     return (
         <div className='container'>
-            <Header></Header>
+            <Header idFound={id}></Header>
 
             <Table striped bordered hover className='mt-5'>
                 <thead>
@@ -63,7 +63,7 @@ const Checkout = () => {
                 name ?
                 <button className='btn btn-success ml-auto d-flex justify-content-end' onClick={handleOrderInfo}>Checkout</button> 
                 :
-                <Link to='/'><button className='btn btn-success ml-auto d-flex justify-content-end'>Shop Now</button></Link>
+                <Link to='/' className='nav-link'><button className='btn btn-success ml-auto d-flex justify-content-end'>Shop Now</button></Link>
             }
         </div>
     );

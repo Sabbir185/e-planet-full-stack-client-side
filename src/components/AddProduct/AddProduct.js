@@ -20,7 +20,7 @@ const AddProduct = () => {
             imageLink: imageURL
         };
         if(imageURL !== null ){
-            const url = `http://localhost:5000/addProduct`;
+            const url = `https://sabbir185-eplanetshop.herokuapp.com/addProduct`;
             fetch(url,{
                 method:'POST',
                 headers:{'content-type':'application/json'},

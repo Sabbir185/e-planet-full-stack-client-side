@@ -9,7 +9,7 @@ const OrderList = (props) => {
             <td>#</td>
             <td>{name}</td>
             <td>{price}</td>
-            <td>{orderTime}</td>
+            <td>{(new Date(orderTime)).toDateString('dd/MM/yyyy')}</td>
         </tr>
                 
     );

@@ -8,18 +8,11 @@ const ProductAction = (props) => {
     const edit = props.edit;
 
     const handleEditProduct = (id) => {
-        // fetch(`http://localhost:5000/deleteProduct`,{
-        //     method: 'DELETE',
-        //     headers: {'content-type':'application/json'},
-        //     body: JSON.stringify(id)
-        // })
-        // .then(res => {
-        //     console.log(res)
-        // })
+        
     }
 
     const handleDeleteProduct = (id) => {
-        fetch(`http://localhost:5000/delete/${id}`,{
+        fetch(`https://sabbir185-eplanetshop.herokuapp.com/delete/${id}`,{
             method:"DELETE"
         })
         .then(res => res.json())
@@ -27,7 +20,6 @@ const ProductAction = (props) => {
             if(data){
                 alert("Delete successful !")
                 history.push('/admin')
-                // window.location.reload();
             }
         })
     }

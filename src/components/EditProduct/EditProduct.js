@@ -5,7 +5,7 @@ import ProductAction from '../ProductAction/ProductAction';
 const EditProduct = () => {
     const [manageProducts, setManageProducts] = useState([]);
     useEffect(()=>{
-        const url = `http://localhost:5000/products`;
+        const url = `https://sabbir185-eplanetshop.herokuapp.com/products`;
         fetch(url)
         .then(res => res.json())
         .then(data => setManageProducts(data))

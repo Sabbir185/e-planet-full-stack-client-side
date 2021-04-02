@@ -15,32 +15,35 @@ const Home = () => {
 
     
     return (
-        <div className='container'>
-            <Header></Header>
+        <div className='container-fluid home-container'>
+            <div className='container bg-color pt-2'>
+                <Header></Header>
 
-            <div className="row mt-3">
-                <div className="col"></div>
-                <div className="text-center">
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button className='btnStyle' type="submit" variant="outline-success">Search</Button>
-                    </Form>
-                </div>
-                <div className="col"></div>
-            </div>
-
-            {
-                products.length == 0 && <div className='spinner'>
-                    <Spinner variant='success' animation="border" role="status">
-                        <span className="sr-only">Loading...</span>
-                    </Spinner>
+                <div className="row mt-3">
+                    <div className="col"></div>
+                    <div className="text-center">
+                        <Form inline>
+                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                            <Button className='btnStyle' type="submit" variant="outline-success">Search</Button>
+                        </Form>
                     </div>
-            }
-            
-            <div className='card-style'>
+                    <div className="col"></div>
+                </div>
+
                 {
-                    products.map( pd => <ProductCard key={pd._id} product={pd}></ProductCard> )
+                    products.length == 0 && <div className='spinner'>
+                        <Spinner variant='danger' animation="border" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </Spinner>
+                        </div>
                 }
+                
+                <div className='card-style'>
+                    {
+                        products.map( pd => <ProductCard key={pd._id} product={pd}></ProductCard> )
+                    }
+                </div>
+
             </div>
 
         </div>

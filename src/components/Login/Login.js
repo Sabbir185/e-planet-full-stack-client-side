@@ -37,7 +37,6 @@ const Login = () => {
             setLoggedInUser(googleUserInfo)
             history.replace(from)
         }).catch((error) => {
-            // Handle Errors here.
             const errorMessage = error.message;
         });
     }
@@ -48,51 +47,52 @@ const Login = () => {
 
 
     return (
-        <div className='container'>
-            <Header></Header>
+        <div className='container-fluid home-container'>
+            <div className='container pt-2 order-container'>
+                <Header></Header>
 
-            <div className="row">
-                <div className="col"></div>
-                <div className="col-sm-8 col-md-8 col-lg-4 col-xlg-4 form-container">
-                    
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                        <h5>Create an account</h5>
-                        <input name="name" ref={register({ required: true })} placeholder='Name' className='form-control mt-4'/>
-                        {errors.name && <span className='text-danger'>Name is required</span>}
-                        <br/>
-
-                        <input name="email" ref={register({ required: true, pattern: /\S+@\S+\.\S+/ })} placeholder='UserName or Email' className='form-control'/>
-                        {errors.email && <span className='text-danger'>Email is required</span>}
-                        <br/>
-
-                        <input type='password' name="password" ref={register({ required: true, min: 6, pattern: /\d{1}/ })} placeholder='Password' className='form-control'/>
-                        {errors.password && <span className='text-danger'>Password is required</span>}
-                        <small><em style={{color:'gray', padding:'5px'}}>Minmun length 6 with character and number</em></small>
-                        <br/><br/>
-
-                        <input type='password' name="confirmPassword" ref={register({ required: true, min: 6, pattern: /\d{1}/ })} placeholder='Confirm Password' className='form-control'/>
-                        {errors.confirmPassword && <span className='text-danger'>Confirm Password is required</span>}
-                        <small><em style={{color:'gray', padding:'5px'}}>Minmun length 6 with character and number</em></small>
-                        <br/><br/>
+                <div className="row">
+                    <div className="col"></div>
+                    <div className="col-sm-8 col-md-8 col-lg-4 col-xlg-4 form-container">
                         
-                        <input type="submit" value='Create an account' className='btn btn-success w-100'/>
-                    </form>
-                </div>
-                <div className="col"></div>
-            </div>
+                        <form onSubmit={handleSubmit(onSubmit)}>
+                            <h5>Create an account</h5>
+                            <input name="name" ref={register({ required: true })} placeholder='Name' className='form-control mt-4'/>
+                            {errors.name && <span className='text-danger'>Name is required</span>}
+                            <br/>
 
-            <div>
-                <div className='row'>
-                    <div className="col-3"></div>
-                    <div className="col-sm-12 col-md-12 col-lg-6 col-xlg-6 mb-5">
-                        <p className='text-center mt-3'>--------------- or ---------------</p>
-                        <div onClick={handleGoogleSignIn} className="google-sign w-75"><img src={googleIcon} alt=""/> Continue with Google</div>
+                            <input name="email" ref={register({ required: true, pattern: /\S+@\S+\.\S+/ })} placeholder='UserName or Email' className='form-control'/>
+                            {errors.email && <span className='text-danger'>Email is required</span>}
+                            <br/>
+
+                            <input type='password' name="password" ref={register({ required: true, min: 6, pattern: /\d{1}/ })} placeholder='Password' className='form-control'/>
+                            {errors.password && <span className='text-danger'>Password is required</span>}
+                            <small><em style={{color:'gray', padding:'5px'}}>Minmun length 6 with character and number</em></small>
+                            <br/><br/>
+
+                            <input type='password' name="confirmPassword" ref={register({ required: true, min: 6, pattern: /\d{1}/ })} placeholder='Confirm Password' className='form-control'/>
+                            {errors.confirmPassword && <span className='text-danger'>Confirm Password is required</span>}
+                            <small><em style={{color:'gray', padding:'5px'}}>Minmun length 6 with character and number</em></small>
+                            <br/><br/>
+                            
+                            <input type="submit" value='Create an account' className='btn btn-success w-100'/>
+                        </form>
                     </div>
-                    <div className="col-3"></div>
+                    <div className="col"></div>
                 </div>
+
+                <div>
+                    <div className='row'>
+                        <div className="col-3"></div>
+                        <div className="col-sm-12 col-md-12 col-lg-6 col-xlg-6 mb-5">
+                            <p className='text-center mt-3'>--------------- or ---------------</p>
+                            <div onClick={handleGoogleSignIn} className="google-sign w-75"><img src={googleIcon} alt=""/> Continue with Google</div>
+                        </div>
+                        <div className="col-3"></div>
+                    </div>
+                </div>
+
             </div>
-
-
         </div>
     );
 };

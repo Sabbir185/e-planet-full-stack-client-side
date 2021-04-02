@@ -1,3 +1,8 @@
+.bg-color{
+    background-image: linear-gradient(60deg ,rgb(73, 218, 218),rgb(193, 227, 238));
+    
+    
+}
 .card-style{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -5,10 +10,18 @@
     margin-top: 40px;
 }
 
+.btnStyle{
+    font-weight: 600;
+}
+
 .spinner{
     width: 100%;
     text-align: center;
     margin-top: 10%;
+}
+
+.home-container{
+    background-color: rgb(230, 228, 228) ;
 }
 
 @media only screen and (max-width: 992px) {

@@ -36,7 +36,8 @@ const Admin = () => {
 
 
     return (
-        <div className='container'>
+        <div className='container-fluid home-container'>
+        <div className='container bg-color pt-2 Admin-container'>
             <Header></Header>
 
             <Router>
@@ -89,7 +90,9 @@ const Admin = () => {
                     </div>
                 </div>
             </Router>
-        </div>  
+        </div> 
+
+        </div> 
     );
 };
 

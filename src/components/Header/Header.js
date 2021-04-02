@@ -20,7 +20,7 @@ const Header = (props) => {
     return (
         <div className='mt-2'>
             <Navbar collapseOnSelect expand="lg" bg="" variant="light">
-                <Navbar.Brand href="#home"><Link to='/'><h1 className='text-warning'>{logoIcon}</h1></Link></Navbar.Brand>
+                <Navbar.Brand href="#home"><Link to='/'><h1 className='logo-bag'>{logoIcon}</h1></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
@@ -34,8 +34,6 @@ const Header = (props) => {
                         {
                             email ? 
                             <Nav.Link className='mr-3'> <Link to='/home' className='nav-link'> <img className='googlePhoto' src={photoURL} alt=""/> </Link> </Nav.Link>
-
-                            // <h5 className='user-name'>{name}</h5> :
                             :
                             <Button variant="outline-success"> <Link to='/login' className='nav-link hover'> Login </Link> </Button>
                         }

@@ -2,6 +2,12 @@
     border-right: 2px solid gray;
 }
 
+.spinner2{
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+}
+
 
 @media only screen and (max-width: 768px) {
     .order-info{

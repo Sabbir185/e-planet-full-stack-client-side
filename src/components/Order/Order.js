@@ -3,7 +3,7 @@ import Header from './../Header/Header';
 import './Order.css'
 import { useState } from 'react';
 import { UserContext } from './../../App';
-import { Table } from 'react-bootstrap';
+import { Spinner, Table } from 'react-bootstrap';
 import OrderList from './../OrderList/OrderList';
 
 const Order = () => {
@@ -16,7 +16,7 @@ const Order = () => {
         .then(data => setUserOrder(data))
     },[])
 
-    // console.log(userOrder)
+  
     return (
         <div className='container'>
             <Header></Header>
@@ -37,6 +37,7 @@ const Order = () => {
                                 <th>Date</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
                             
                             {
@@ -45,6 +46,13 @@ const Order = () => {
                             
                         </tbody>
                     </Table>
+                    {
+                        userOrder.length == 0 && <div className='spinner2'>
+                            <Spinner variant='success' animation="border" role="status">
+                                <span className="sr-only">Loading...</span>
+                            </Spinner>
+                            </div>
+                    }
                 </div>
             </div>
         </div>

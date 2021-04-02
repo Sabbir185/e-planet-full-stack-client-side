@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Form, FormControl, Button } from 'react-bootstrap';
+import { Form, FormControl, Button, Spinner } from 'react-bootstrap';
 import Header from '../Header/Header';
 import ProductCard from './../ProductCard/ProductCard';
 import './Home.css'
@@ -29,6 +29,14 @@ const Home = () => {
                 <div className="col"></div>
             </div>
 
+            {
+                products.length == 0 && <div className='spinner'>
+                    <Spinner variant='success' animation="border" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
+                    </div>
+            }
+            
             <div className='card-style'>
                 {
                     products.map( pd => <ProductCard key={pd._id} product={pd}></ProductCard> )

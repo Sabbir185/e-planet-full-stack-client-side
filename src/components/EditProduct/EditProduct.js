@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import LinearIndeterminate from '../LinearIndeterminate/LinearIndeterminate';
 import ProductAction from '../ProductAction/ProductAction';
 
 const EditProduct = () => {
@@ -31,6 +32,9 @@ const EditProduct = () => {
                             manageProducts.map(pd => <ProductAction edit='true' product={pd} key={pd._id}></ProductAction>)
                         }
                     </div>
+                    {
+                        manageProducts.length == 0 && <LinearIndeterminate></LinearIndeterminate>
+                    }
 
                 </div>
                 <div className="col"></div>

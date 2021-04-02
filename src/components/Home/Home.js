@@ -20,10 +20,10 @@ const Home = () => {
 
             <div className="row mt-3">
                 <div className="col"></div>
-                <div className="col text-center">
+                <div className="text-center">
                     <Form inline>
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button type="submit" variant="outline-success">Search</Button>
+                        <Button className='btnStyle' type="submit" variant="outline-success">Search</Button>
                     </Form>
                 </div>
                 <div className="col"></div>

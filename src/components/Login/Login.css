@@ -28,3 +28,10 @@
     background-color: rgb(233, 231, 231);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+@media only screen and (max-width: 570px) {
+    .form-container {
+      margin: auto 40px;
+      margin-top: 30px;
+    }
+  }

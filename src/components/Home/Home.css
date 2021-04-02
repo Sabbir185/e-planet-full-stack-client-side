@@ -10,3 +10,30 @@
     text-align: center;
     margin-top: 10%;
 }
+
+@media only screen and (max-width: 992px) {
+    .card-style{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        margin-top: 40px;
+    }
+  }
+@media only screen and (max-width: 770px) {
+    .card-style{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+        margin-top: 40px;
+    }
+  }
+@media only screen and (max-width: 570px) {
+  
+    .btnStyle{
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+
+    }
+  }
+
